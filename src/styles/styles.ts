@@ -1,7 +1,7 @@
 import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
-  // App Layout
+  // ===== Core Layout =====
   container: {
     flex: 1,
     backgroundColor: '#fff',
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     borderRadius: 20,
   },
 
-  // Balance Card(yung allowance)
+  // ===== Balance Card =====
   balanceCard: {
     backgroundColor: '#000',
     borderRadius: 20,
@@ -53,22 +53,31 @@ const styles = StyleSheet.create({
     fontSize: 12,
     marginTop: 4,
   },
-  allowanceButton: {
+  balanceActions: {
+    flexDirection: 'row',
+    alignItems: 'center',
+  },
+  addBalanceButton: {
     backgroundColor: '#fff',
     borderRadius: 16,
-    width: 32,
-    height: 32,
+    paddingVertical: 8,
+    paddingHorizontal: 16,
     alignItems: 'center',
     justifyContent: 'center',
   },
-  allowanceButtonText: {
-    fontSize: 24,
+  addBalanceText: {
+    fontSize: 16,
     fontWeight: 'bold',
     color: '#000',
-    lineHeight: 28,
+  },
+  modalSubtitle: {
+  fontSize: 14,
+  color: '#666',
+  marginBottom: 10,
   },
 
-  // Expense
+
+  // ===== Expenses Section =====
   sectionHeader: {
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -127,8 +136,13 @@ const styles = StyleSheet.create({
     fontWeight: '600',
     color: '#000',
   },
+  emptyExpenses: {
+    textAlign: 'center',
+    color: '#888',
+    marginTop: 20,
+  },
 
-  // styles for profile
+  // ===== Profile Modals =====
   modalOverlay: {
     flex: 1,
     backgroundColor: 'rgba(0,0,0,0.3)',
@@ -147,11 +161,16 @@ const styles = StyleSheet.create({
     marginBottom: 15,
     color: '#000',
   },
-  profileItem: {
+  profileItemContainer: {
     flexDirection: 'row',
     alignItems: 'center',
     marginBottom: 15,
     paddingVertical: 8,
+  },
+  profileItem: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    flex: 1,
   },
   modalProfileImage: {
     width: 40,
@@ -162,84 +181,154 @@ const styles = StyleSheet.create({
   profileName: {
     fontSize: 16,
     color: '#000',
+    flex: 1,
   },
-  addProfileButton: {
-    paddingVertical: 12,
-    alignItems: 'center',
+  profileActions: {
+    flexDirection: 'row',
+    gap: 15,
   },
-  addProfileButtonText: {
-    fontSize: 16,
-    fontWeight: 'bold',
+  editButtonText: {
+    fontSize: 18,
     color: '#007AFF',
   },
-  deleteButton: {
-  marginLeft: 'auto',
-  paddingHorizontal: 10,
-  },
   deleteButtonText: {
-  fontSize: 24,
-  color: '#FF3B30',
+    fontSize: 18,
+    color: '#FF3B30',
   },
-  profileItemContainer: {
-  flexDirection: 'row',
-  alignItems: 'center',
-  marginBottom: 15,
+  addButton: {
+    backgroundColor: '#000',
+    borderRadius: 10,
+    padding: 15,
+    alignItems: 'center',
+    marginTop: 10,
   },
-  // Profile Actions
-profileActions: {
-  flexDirection: 'row',
-  gap: 15,
-  marginLeft: 'auto',
- },
-  editButtonText: {
-  fontSize: 18,
- },
+  addButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+    fontSize: 16,
+  },
 
-
-// Edit Modal
+  // ===== Edit Modal =====
   editModalContainer: {
-  backgroundColor: '#fff',
-  padding: 20,
-  borderRadius: 20,
-  width: '80%',
-  alignSelf: 'center',
-  marginTop: 'auto',
-  marginBottom: 'auto',
+    backgroundColor: '#fff',
+    padding: 20,
+    borderRadius: 20,
+    width: '80%',
+    alignSelf: 'center',
+    marginTop: 'auto',
+    marginBottom: 'auto',
   },
   editInput: {
-  borderWidth: 1,
-  borderColor: '#ccc',
-  borderRadius: 10,
-  padding: 15,
-  marginVertical: 15,
-  fontSize: 16,
+    borderWidth: 1,
+    borderColor: '#ccc',
+    borderRadius: 10,
+    padding: 15,
+    marginVertical: 15,
+    fontSize: 16,
   },
   editButtonRow: {
-  flexDirection: 'row',
-  justifyContent: 'space-between',
+    flexDirection: 'row',
+    justifyContent: 'space-between',
   },
   cancelButton: {
-  backgroundColor: '#f0f0f0',
-  padding: 15,
-  borderRadius: 10,
-  flex: 1,
-  marginRight: 10,
-  alignItems: 'center',
+    backgroundColor: '#f0f0f0',
+    padding: 15,
+    borderRadius: 10,
+    flex: 1,
+    marginRight: 10,
+    alignItems: 'center',
   },
   saveButton: {
-  backgroundColor: '#000',
-  padding: 15,
-  borderRadius: 10,
-  flex: 1,
-  alignItems: 'center',
+    backgroundColor: '#000',
+    padding: 15,
+    borderRadius: 10,
+    flex: 1,
+    alignItems: 'center',
   },
   cancelButtonText: {
-  color: '#000',
-  fontWeight: 'bold',
+    color: '#000',
+    fontWeight: 'bold',
   },
   saveButtonText: {
+    color: '#fff',
+    fontWeight: 'bold',
+  },
+
+// ===== Request System =====
+  requestItem: {
+  flexDirection: 'row',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  paddingVertical: 10,
+  borderBottomWidth: 1,
+  borderColor: '#eee',
+  },
+  requestText: {
+  flex: 1,
+  fontSize: 14,
+  color: '#333',
+  },
+  requestActions: {
+  flexDirection: 'row',
+  alignItems: 'center',
+  gap: 10,
+  },
+  approveButton: {
+  backgroundColor: '#4caf50',
+  padding: 6,
+  borderRadius: 5,
+  },
+  denyButton: {
+  backgroundColor: '#f44336',
+  padding: 6,
+  borderRadius: 5,
+  },
+  approveButtonText: {
   color: '#fff',
   fontWeight: 'bold',
+  },
+  denyButtonText: {
+  color: '#fff',
+  fontWeight: 'bold',
+  },
+  requestStatusText: {
+  fontSize: 12,
+  color: '#888',
+  fontStyle: 'italic',
+  },
+
+// ===== Notification Button =====
+  notificationButton: {
+    position: 'relative',
+    marginRight: 15,
+  },
+  notificationBadge: {
+    position: 'absolute',
+    right: -5,
+    top: -5,
+    backgroundColor: 'red',
+    color: 'white',
+    borderRadius: 10,
+    width: 20,
+    height: 20,
+    textAlign: 'center',
+    lineHeight: 20,
+    fontSize: 12,
+  },
+  notificationIcon: {
+    fontSize: 24,
+  },
+
+  // ===== Empty States =====
+  emptyState: {
+    alignItems: 'center',
+    justifyContent: 'center',
+    padding: 30,
+  },
+  emptyText: {
+    fontSize: 18,
+    color: '#888',
+    marginBottom: 20,
   },
 });
 

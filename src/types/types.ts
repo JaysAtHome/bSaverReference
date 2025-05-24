@@ -16,13 +16,12 @@ export type Expense = {
 };
 
 // allowance request
-export type AllowanceRequest = {
+export interface AllowanceRequest {
   id: string;
-  teenId: string;     // Links to Profile.id
-  amount: number;
+  profileId: string;
   reason: string;
-  status: 'pending' | 'approved' | 'rejected';
-  createdAt: Date;    // For sorting/filtering
+  amount: number;
+  status: 'pending' | 'approved' | 'denied';
 };
 
 // modals
